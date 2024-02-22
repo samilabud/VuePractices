@@ -6,9 +6,13 @@ const inputTask = ref("");
 const todos = ref([{ id: 1, name: "Go to the supermarket", done: false }, { id: 2, name: "Fix frontend bug", done: true }])
 
 const addTask = () => {
-    lastId.value++;
-    todos.value.push({ id: lastId.value, name: inputTask.value, done: false })
-    inputTask.value = ""
+    if (inputTask.value !== "") {
+        lastId.value++;
+        todos.value.push({ id: lastId.value, name: inputTask.value, done: false })
+        inputTask.value = ""
+    } else {
+        alert("Please type a task!")
+    }
 }
 
 const removeTask = (id) => {
@@ -27,7 +31,7 @@ const markAsDone = (id) => {
 
 <template>
     <form @submit.prevent="addTask">
-        <input v-model="inputTask" />
+        <label for="task">Task:</label><input v-model="inputTask" id="task" />
         <button>Add task</button>
     </form>
     <ul class="todolist">
