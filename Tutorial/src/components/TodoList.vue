@@ -37,8 +37,8 @@ const markAsDone = (id) => {
     <ul class="todolist">
         <li v-for="todo in todos" :key="todo.id">
             <span :class="{ taskDone: todo.done }">{{ todo.name }} </span>
-            <button v-if="!todo.done" @click="markAsDone(todo.id)">Done!</button><button
-                @click="removeTask(todo.id)">X</button>
+            <button v-if="!todo.done" @click="markAsDone(todo.id)">Done!</button>
+            <button @click="removeTask(todo.id)">X</button>
         </li>
     </ul>
 </template>
