@@ -1,26 +1,26 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { reactive, watch } from 'vue'
 
-const counter = ref(0);
+const counter = reactive({ number: 0 });
 
 watch(counter, () => {
-    if (counter.value < 0) {
-        counter.value = 0
+    if (counter.number < 0) {
+        counter.number = 0
     }
 })
 
 const increase = () => {
-    counter.value++
+    counter.number++
 }
 
 const decrease = () => {
-    counter.value--
+    counter.number--
 }
 
 </script>
 
 <template>
-    <p><span>{{ counter }}</span></p>
+    <p><span>{{ counter.number }}</span></p>
     <button @click="increase">Increase!</button>
     <button @click="decrease">Decrease!</button>
 </template>
