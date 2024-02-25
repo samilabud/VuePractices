@@ -15,6 +15,19 @@
   @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3;
 }
 
+.input_focus {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+}
+
 .input {
-  @apply shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight;
+  @apply shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight input_focus;
+  @apply flex h-10 w-full rounded-md border border-solid border-blue-600 px-3 py-2 text-sm;
+}
+
+.fullinput {
+  @apply flex h-10 w-full rounded-md border border-solid border-blue-600 px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50 input_focus;
+}
+
+.selectinput {
+  @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500;
 }
