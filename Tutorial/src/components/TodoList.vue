@@ -31,14 +31,14 @@ const markAsDone = (id) => {
 
 <template>
     <form @submit.prevent="addTask">
-        <label for="task">Task:</label><input v-model="inputTask" id="task" />
-        <button>Add task</button>
+        <label for="task">Task:</label><input class="input" v-model="inputTask" id="task" />
+        <button class="button">Add task</button>
     </form>
     <ul class="todolist">
         <li v-for="todo in todos" :key="todo.id">
             <span :class="{ taskDone: todo.done }">{{ todo.name }} </span>
-            <button v-if="!todo.done" @click="markAsDone(todo.id)">Done!</button>
-            <button @click="removeTask(todo.id)">X</button>
+            <button class="button" v-if="!todo.done" @click="markAsDone(todo.id)">Done!</button>
+            <button class="button" @click="removeTask(todo.id)">X</button>
         </li>
     </ul>
 </template>
