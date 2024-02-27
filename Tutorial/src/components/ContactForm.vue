@@ -101,9 +101,10 @@
     <p class="text-center text-gray-500 text-xs">
         &copy;2024 Samil Abud. All rights reserved.
     </p>
-    <div class="rounded-lg border bg-gray-100 text-black shadow-sm w-full max-w-md mx-auto">
+    <div class="rounded-lg border bg-gray-100 text-black shadow-sm w-full max-w-md mx-auto pb-5">
+        <h3 class="text-lg font-semibold">Live answers</h3>
         <div v-if="firstName || lastName">
-            <stong>Name:</stong> <span>{{ firstName }} {{ lastName }}</span>
+            <strong>Name:</strong> <span>{{ firstName }} {{ lastName }}</span>
         </div>
         <div v-if="email">
             <strong>Email:</strong><span>{{ email }}</span>
