@@ -15,8 +15,8 @@
                                 for="first-name">
                                 First name
                             </label>
-                            <input :class="{ input_error: firstNameError }" class="input" id="first-name"
-                                placeholder="Enter your first name" v-model.trim="firstName" />
+                            <input ref="inputFirstName" :class="{ input_error: firstNameError }" class="input"
+                                id="first-name" placeholder="Enter your first name" v-model.trim="firstName" />
                             <p v-if="firstNameError" class="text-red-500 text-xs italic">{{ firstNameError }}</p>
                         </div>
                         <div class="space-y-2">
@@ -147,8 +147,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
+const inputFirstName = ref(null);
 const firstName = ref('');
 const lastName = ref('')
 const email = ref('')
@@ -184,4 +185,8 @@ const cleanErrorMessages = () => {
     formStatusMessage.value = "";
     hasError.value = false;
 }
+
+onMounted(() => {
+    inputFirstName.value.focus();
+})
 </script>
