@@ -11,7 +11,7 @@
                 <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-2">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
                                 for="first-name">
                                 First name
                             </label>
@@ -20,7 +20,7 @@
                             <p v-if="firstNameError" class="text-red-500 text-xs italic">{{ firstNameError }}</p>
                         </div>
                         <div class="space-y-2">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
                                 for="last-name">
                                 Last name
                             </label>
@@ -29,39 +29,44 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
+                            for="email">
                             Email
                         </label>
                         <input class="fullinput" id="email" placeholder="Enter your email" type="email"
                             v-model.trim.lazy="email" />
                     </div>
                     <div class="space-y-2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
+                            for="message">
                             Message
                         </label>
                         <textarea class="fullinput min-h-[100px]" id="message" placeholder="Enter your message"
                             v-model="message"></textarea>
                     </div>
                     <div class="space-y-2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
+                            for="message">
                             Favorite Frontend Language
                         </label>
-                        <div class="flex justify-between w-28">
+                        <div class="block justify-between w-28">
                             <input type="radio" name="language" value="Vue" id="vue" v-model="language" />
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold" for="vue">
+                            <label class="tracking-wide text-gray-700 text-xs font-bold" for="vue">
                                 Vue
                             </label>
+                            <div class="w-3 inline-block"></div>
                             <input type="radio" name="language" value="React" id="react" v-model="language" />
-                            <label class="block tracking-wide text-gray-700 text-xs font-bold" for="react">
+                            <label class="tracking-wide text-gray-700 text-xs font-bold" for="react">
                                 React
                             </label>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="places">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
+                            for="places">
                             Favorite Place in DR
                         </label>
-                        <div class="flex justify-between">
+                        <div class="justify-between block">
                             <select name="places" class="selectinput" id="places" v-model="places">
                                 <option value="" disabled selected>Select a place</option>
                                 <option>Constanza</option>
@@ -72,10 +77,11 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="message">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 float-left"
+                            for="message">
                             Favorite Fruits
                         </label>
-                        <div class="flex justify-between px-3">
+                        <div class="flex justify-between px-3 clear-start">
                             <input type="checkbox" id="strawberry" value="Strawberry" v-model="fruits" />
                             <label for="strawberry">Strawberry</label>
 
