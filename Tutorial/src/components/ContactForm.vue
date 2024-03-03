@@ -49,16 +49,15 @@
                             for="message">
                             Favorite Frontend Language
                         </label>
-                        <div class="block justify-between w-28">
-                            <input type="radio" name="language" value="Vue" id="vue" v-model="language" />
-                            <label class="tracking-wide text-gray-700 text-xs font-bold" for="vue">
-                                Vue
-                            </label>
-                            <div class="w-3 inline-block"></div>
-                            <input type="radio" name="language" value="React" id="react" v-model="language" />
-                            <label class="tracking-wide text-gray-700 text-xs font-bold" for="react">
-                                React
-                            </label>
+                        <div class="flex justify-between w-full">
+                            <div :key="index" v-for="(languageAvailable, index) in availableLanguages">
+                                <input type="radio" name="language" :value="languageAvailable"
+                                    :id="languageAvailable.toLowerCase()" v-model="language" />
+                                <label class="tracking-wide text-gray-700 text-xs font-bold ml-3"
+                                    :for="languageAvailable.toLowerCase()">
+                                    {{ languageAvailable }}
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -168,6 +167,8 @@ const firstNameError = ref('')
 
 const hasError = ref(false);
 const formStatusMessage = ref("");
+
+const availableLanguages = ref(["Vue", "React", "Angular"])
 
 const runValidations = () => {
     firstNameError.value = firstName.value === "" ? "Should has a first name!" : "";
